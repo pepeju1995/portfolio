@@ -1,7 +1,7 @@
-import MyApp from './app'
-
-export default function Home() {
+export default function Home () {
   return (
-    <MyApp />
+    <section>
+      Hola
+    </section>
   )
 }
