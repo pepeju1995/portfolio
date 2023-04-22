@@ -1,3 +1,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --primary: #8F7924;
+--secondary: #FFE373;
+#DBBF4D
+#151B8F
+#4D54DB */
+
+:root {
+	font-family: 'Roboto', sans-serif;
+	--primary: #FAE8D0;
+	--secondary: #000;
+}
+
+body {
+	background-color: var(--primary);
+	list-style: none;
+}
+
+header {
+	padding: 2em 3em;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav {
+	width: 50%;
+}
+
+.mainMenu {
+	display: flex;
+	justify-content: space-between;
+}
+
+section {
+	background-color: #DBBF4D;
+	padding: 2em 4em;
+}
+
+.footer  {
+	padding: 2em 2em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
