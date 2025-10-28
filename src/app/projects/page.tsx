@@ -1,11 +1,19 @@
-// app/projects/page.tsx
+import ProjectCard from './components/ProjectCard';
+import { FaServer } from 'react-icons/fa';
 
-import ProjectCard from './components/ProjectCard'; // Importar el componente creado
-import { FaServer } from 'react-icons/fa'; // Para destacar el título
+export interface Project {
+  id: string;
+  title: string;
+  shortDescription: string;
+  technologies: string[];
+  role: 'Front-End' | 'Back-End' | 'Full-Stack';
+  imageCover: string;
+  linkLive: string;
+  linkRepo: string;
+}
 
-const getProjects = async () => {
-  // Simulación con más datos para ver el layout
-  const mockData = [
+const getProjects = () => {
+  const mockData: Project[] = [
     {
       id: '1',
       title: 'E-Commerce API',
@@ -43,19 +51,17 @@ const getProjects = async () => {
   return mockData;
 };
 
-export default async function ProjectsPage() {
-  const projects = await getProjects();
+export default function ProjectsPage() {
+  const projects = getProjects();
 
   return (
-    // Estilos de fondo y padding consistentes con el layout principal y dark mode
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors min-h-screen">
       <div className="max-w-7xl mx-auto">
-        {/* Título Principal */}
         <h1 className="text-4xl font-extrabold text-center mb-4 text-gray-900 dark:text-gray-50">
-          <FaServer
-            className="inline-block mr-3 text-blue-600 dark:text-blue-400"
-            size={32}
-          />
+          {FaServer({
+            className: 'inline-block mr-3 text-blue-600 dark:text-blue-400',
+            size: 32,
+          })}
           Portafolio de Proyectos
         </h1>
         <p className="text-xl text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
@@ -63,7 +69,6 @@ export default async function ProjectsPage() {
           en el **Back-End** de cada proyecto.
         </p>
 
-        {/* Lista de Proyectos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />

@@ -1,9 +1,7 @@
-// components/contact/ContactForm.tsx
 'use client';
 
 import React, { useState } from 'react';
 
-// Interfaces básicas (si no usas archivos .ts separados):
 interface IContactForm {
   name: string;
   email: string;
@@ -44,7 +42,6 @@ export default function ContactForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Limpiar error al empezar a escribir
     setErrors({ ...errors, [e.target.name]: null });
   };
 
@@ -55,7 +52,6 @@ export default function ContactForm() {
     setStatus('loading');
 
     try {
-      // 💡 ESTA RUTA LLAMA A TU API ROUTE EN /api/contact
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -75,13 +71,11 @@ export default function ContactForm() {
     }
   };
 
-  // Clases base para inputs
   const inputClass =
     'w-full p-3 border rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Nombre */}
       <div>
         <label
           htmlFor="name"
@@ -103,7 +97,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Email */}
       <div>
         <label
           htmlFor="email"
@@ -125,7 +118,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Asunto */}
       <div>
         <label
           htmlFor="subject"
@@ -147,7 +139,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Mensaje */}
       <div>
         <label
           htmlFor="message"
@@ -169,7 +160,6 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Botón de Envío */}
       <button
         type="submit"
         disabled={status === 'loading'}
@@ -180,7 +170,6 @@ export default function ContactForm() {
         {status === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
       </button>
 
-      {/* Mensajes de Estado */}
       {status === 'success' && (
         <p className="text-center text-green-500">
           ¡Mensaje enviado con éxito! Te responderé pronto.

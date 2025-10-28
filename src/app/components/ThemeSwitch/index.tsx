@@ -14,17 +14,15 @@ export function ThemeSwitcher() {
       className="p-2 rounded-full transition-colors focus:outline-none"
       title={`Cambiar a modo ${currentTheme === 'dark' ? 'Claro' : 'Oscuro'}`}
     >
-      {currentTheme === 'dark' ? (
-        <IoSunnyOutline
-          size={20}
-          className="text-yellow-400 hover:text-yellow-300"
-        />
-      ) : (
-        <IoMoonOutline
-          size={20}
-          className="text-gray-700 hover:text-gray-900"
-        />
-      )}
+      {currentTheme === 'dark'
+        ? IoSunnyOutline({
+            size: 20,
+            className: 'text-yellow-400 hover:text-yellow-500',
+          })
+        : IoMoonOutline({
+            size: 20,
+            className: 'text-gray-700 hover:text-gray-900',
+          })}
     </button>
   );
 }

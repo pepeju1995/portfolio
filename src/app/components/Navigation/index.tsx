@@ -35,7 +35,7 @@ export const Navigation = () => {
           className="text-gray-700 dark:text-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           aria-label="Toggle Navigation"
         >
-          {isOpen ? <IoClose size={28} /> : <IoMenu size={28} />}
+          {isOpen ? IoClose({ size: 28 }) : IoMenu({ size: 28 })}
         </button>
       </div>
 

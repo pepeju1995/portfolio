@@ -3,7 +3,6 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      {/* --- 1. SECCIÓN HERO (INTRODUCCIÓN) --- */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 text-center bg-white dark:bg-gray-800 shadow-xl transition-colors">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 text-gray-900 dark:text-gray-50">
@@ -42,7 +41,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- 2. SECCIÓN DE TECNOLOGÍAS CLAVE --- */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 transition-colors">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-gray-50">
@@ -50,7 +48,6 @@ export default function HomePage() {
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Bloque 1: Back-End */}
             <div className="p-6 border-l-4 border-blue-600 shadow-md bg-white dark:bg-gray-800 rounded-lg transition-colors">
               <h4 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
                 Back-End & Lógica
@@ -72,7 +69,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Bloque 2: Bases de Datos & DevOps */}
             <div className="p-6 border-l-4 border-yellow-500 shadow-md bg-white dark:bg-gray-800 rounded-lg transition-colors">
               <h4 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
                 Datos & Infraestructura
@@ -95,7 +91,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Bloque 3: Front-End */}
             <div className="p-6 border-l-4 border-green-600 shadow-md bg-white dark:bg-gray-800 rounded-lg transition-colors">
               <h4 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
                 Front-End & UI
@@ -115,7 +110,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* --- 3. SECCIÓN DESTACADA DE PROYECTOS --- */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 text-center bg-white dark:bg-gray-800 transition-colors">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-50">
@@ -125,7 +119,6 @@ export default function HomePage() {
             Échale un vistazo a las soluciones que he diseñado y construido.
           </p>
 
-          {/* Placeholder de Proyectos */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 border rounded-lg shadow-md hover:shadow-xl transition-shadow bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
               <h4 className="font-bold text-xl mb-2 text-gray-800 dark:text-gray-100">
@@ -135,7 +128,6 @@ export default function HomePage() {
                 **Foco:** Java Spring Boot, Kafka.
               </p>
             </div>
-            {/* ... más proyectos ... */}
           </div>
 
           <Link

@@ -14,7 +14,7 @@ export const Footer = () => {
             aria-label="GitHub"
             className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition"
           >
-            <FaGithub size={24} />
+            {FaGithub({ size: 24 })}
           </a>
           <a
             href="[Tu LinkedIn]"
@@ -23,14 +23,14 @@ export const Footer = () => {
             aria-label="LinkedIn"
             className="text-gray-500 dark:text-gray-400 hover:text-blue-700 transition"
           >
-            <FaLinkedin size={24} />
+            {FaLinkedin({ size: 24 })}
           </a>
           <a
             href="mailto:[Tu Email]"
             aria-label="Correo Electrónico"
             className="text-gray-500 dark:text-gray-400 hover:text-red-600 transition"
           >
-            <FaEnvelope size={24} />
+            {FaEnvelope({ size: 24 })}
           </a>
         </div>
 
