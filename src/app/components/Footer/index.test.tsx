@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Footer } from '.';
+import { EMAIL_ADDRESS, Footer, GITHUB_URL, LINKEDIN_URL } from '.';
 import { SVGProps } from 'react';
 
 interface MockIconProps extends SVGProps<SVGSVGElement> {}
@@ -27,12 +27,10 @@ describe('Footer', () => {
 
   it('renders correct links and mailto', () => {
     const { getByLabelText } = render(<Footer />);
-    expect(getByLabelText('GitHub').getAttribute('href')).toBe('[Tu GitHub]');
-    expect(getByLabelText('LinkedIn').getAttribute('href')).toBe(
-      '[Tu LinkedIn]'
-    );
+    expect(getByLabelText('GitHub').getAttribute('href')).toBe(GITHUB_URL);
+    expect(getByLabelText('LinkedIn').getAttribute('href')).toBe(LINKEDIN_URL);
     expect(getByLabelText('Correo Electrónico').getAttribute('href')).toBe(
-      'mailto:[Tu Email]'
+      `mailto:${EMAIL_ADDRESS}`
     );
   });
 

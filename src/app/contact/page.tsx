@@ -2,6 +2,7 @@ import ContactForm from './components/ContactForm';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import Link from 'next/link';
+import { GITHUB_URL, LINKEDIN_URL } from '../components/Footer';
 
 const ContactInfo = () => (
   <div className="p-6 bg-blue-600 dark:bg-gray-900 text-white rounded-lg shadow-xl h-full flex flex-col justify-center">
@@ -27,7 +28,7 @@ const ContactInfo = () => (
 
     <div className="mt-8 flex space-x-6">
       <Link
-        href=""
+        href={LINKEDIN_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
@@ -36,7 +37,7 @@ const ContactInfo = () => (
         {FaLinkedin({ size: 28 })}
       </Link>
       <Link
-        href=""
+        href={GITHUB_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"

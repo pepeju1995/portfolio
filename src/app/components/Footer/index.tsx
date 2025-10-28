@@ -1,5 +1,10 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
+export const GITHUB_URL = 'https://github.com/pepeju1995';
+export const LINKEDIN_URL =
+  'https://www.linkedin.com/in/jose-juan-perez-gonzalez-440a0512b/';
+export const EMAIL_ADDRESS = 'pepeju95@gmail.com';
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -8,7 +13,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href="[Tu GitHub]"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -17,7 +22,7 @@ export const Footer = () => {
             {FaGithub({ size: 24 })}
           </a>
           <a
-            href="[Tu LinkedIn]"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -26,7 +31,7 @@ export const Footer = () => {
             {FaLinkedin({ size: 24 })}
           </a>
           <a
-            href="mailto:[Tu Email]"
+            href={`mailto:${EMAIL_ADDRESS}`}
             aria-label="Correo Electrónico"
             className="text-gray-500 dark:text-gray-400 hover:text-red-600 transition"
           >
