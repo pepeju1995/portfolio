@@ -2,7 +2,7 @@ import ContactForm from './components/ContactForm';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import Link from 'next/link';
-import { GITHUB_URL, LINKEDIN_URL } from '../components/Footer';
+import { EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '../components/Footer';
 
 const ContactInfo = () => (
   <div className="p-6 bg-blue-600 dark:bg-gray-900 text-white rounded-lg shadow-xl h-full flex flex-col justify-center">
@@ -14,11 +14,11 @@ const ContactInfo = () => (
     <div className="space-y-4 text-blue-100 dark:text-gray-300">
       <div className="flex items-center">
         {FaEnvelope({ className: 'mr-3 text-xl' })}
-        <p>tu.correo.profesional@ejemplo.com</p>
+        <p>{EMAIL_ADDRESS}</p>
       </div>
       <div className="flex items-center">
         {FaPhone({ className: 'mr-3 text-xl' })}
-        <p>+34 123 45 67 89</p>
+        <p>+34 619 67 39 66</p>
       </div>
       <div className="flex items-center">
         {FaMapMarkerAlt({ className: 'mr-3 text-xl' })}

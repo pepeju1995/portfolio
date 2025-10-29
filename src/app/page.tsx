@@ -18,10 +18,17 @@ export default function HomePage() {
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Me especializo en la construcción de **sistemas robustos, escalables
-            y eficientes** usando [Tu Lenguaje Principal]. Mi experiencia me
-            permite diseñar APIs RESTful, optimizar bases de datos y garantizar
-            la integridad de los datos.
+            Soy un Full-stack Software Engineer con 4 años de experiencia, cuya
+            trayectoria se define por la versatilidad y una capacidad de
+            adaptación acelerada. Mi mayor distintivo es haber desarrollado con
+            éxito soluciones funcionales completas a través de stacks
+            desconocidos, bajo deadlines exigentes y sin sacrificar la calidad.
+            Mi base sólida en PHP me ha permitido una evolución profesional
+            profunda en arquitecturas modernas como React, NextJs y NestJs,
+            además de la implementación de OpenSearch para la gestión de
+            documentos. Mi habilidad para dominar y aplicar nuevas tecnologías
+            rápidamente me permite generar entregables de alto impacto y valor
+            para el negocio.
           </p>
 
           <div className="flex justify-center space-x-4">
