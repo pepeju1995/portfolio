@@ -1,4 +1,4 @@
-import { SkillCategoryComponent } from './components/SkillCategory';
+import { SkillCard } from './components/SkillCard';
 
 interface Skill {
   name: string;
@@ -34,11 +34,7 @@ export default function SkillsPage() {
 
         <div className="space-y-8">
           {Object.entries(groupedSkills).map(([category, skills]) => (
-            <SkillCategoryComponent
-              key={category}
-              category={category}
-              skills={skills}
-            />
+            <SkillCard key={category} category={category} skills={skills} />
           ))}
         </div>
       </div>

@@ -4,15 +4,12 @@ interface Skill {
   category: string;
 }
 
-interface SkillCategoryProps {
+interface SkillCardProps {
   category: string;
   skills: Skill[];
 }
 
-export function SkillCategoryComponent({
-  category,
-  skills,
-}: SkillCategoryProps) {
+export function SkillCard({ category, skills }: SkillCardProps) {
   let accentColor = 'border-blue-600 dark:border-blue-400';
   if (category === 'Front-End') {
     accentColor = 'border-green-600 dark:border-green-400';

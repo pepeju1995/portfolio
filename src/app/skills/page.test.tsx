@@ -2,14 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import SkillsPage from './page';
 
-jest.mock('./components/SkillCategory', () => ({
-  SkillCategoryComponent: ({
-    category,
-    skills,
-  }: {
-    category: string;
-    skills: any[];
-  }) => (
+jest.mock('./components/SkillCard', () => ({
+  SkillCard: ({ category, skills }: { category: string; skills: any[] }) => (
     <div data-testid="skill-category">
       <span>{category}</span>
       <ul>
