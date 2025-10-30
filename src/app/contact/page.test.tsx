@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ContactPage from './page';
+import { EMAIL_ADDRESS } from '../components/Footer';
 
 jest.mock('./components/ContactForm', () => () => (
   <div data-testid="contact-form" />
@@ -30,10 +31,8 @@ describe('ContactPage', () => {
     expect(
       screen.getByText(/¿tienes un proyecto en mente/i)
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(/tu\.correo\.profesional@ejemplo\.com/i)
-    ).toBeInTheDocument();
-    expect(screen.getByText(/\+34 123 45 67 89/)).toBeInTheDocument();
+    expect(screen.getByText(EMAIL_ADDRESS)).toBeInTheDocument();
+    expect(screen.getByText(/\+34 619 67 39 66/)).toBeInTheDocument();
     expect(screen.getByText(/madrid, españa/i)).toBeInTheDocument();
   });
 
