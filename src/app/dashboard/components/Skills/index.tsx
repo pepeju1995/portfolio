@@ -1,4 +1,3 @@
-import { title } from 'process';
 import SkillCard from './components/SkillCard';
 
 const getSkills = () => {
@@ -38,7 +37,7 @@ export default function Skills() {
           Tecnologías Clave y Stack Principal
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {getSkills().map(({ title, skills }) => (
             <div key={title}>
               <SkillCard title={title} skills={skills} />

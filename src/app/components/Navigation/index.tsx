@@ -1,12 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { IoMenu, IoClose } from 'react-icons/io5';
 import { ThemeSwitcher } from '../ThemeSwitch';
+import Image from 'next/image';
+import { useViewport } from '@/app/context/ViewportContext';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isDesktop } = useViewport();
 
   const navItems = [
     { name: 'Inicio', href: '/' },
@@ -19,13 +22,30 @@ export const Navigation = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    if (isDesktop && isOpen) {
+      setIsOpen(false);
+    }
+  }, [isDesktop]);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen && !isDesktop ? 'hidden' : 'auto';
+  }, [isOpen, isDesktop]);
+
   return (
     <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center relative">
       <Link
         href="/"
-        className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition z-20"
+        className="flex items-center text-2xl font-extrabold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition z-20"
       >
-        Jose Juan Pérez González
+        <Image
+          src="/terminalIcon.png"
+          alt="Terminal Icon"
+          width={28}
+          height={28}
+          className="mr-2"
+        />
+        JJPG
       </Link>
 
       <div className="flex items-center space-x-2 lg:hidden z-20">
@@ -50,7 +70,6 @@ export const Navigation = () => {
             {item.name}
           </Link>
         ))}
-
         <ThemeSwitcher />
       </div>
 
@@ -60,12 +79,13 @@ export const Navigation = () => {
           flex flex-col items-center justify-center space-y-8 
           transition-transform duration-300 ease-in-out z-10 
           ${
-            isOpen
+            isOpen && !isDesktop
               ? 'translate-x-0 opacity-100'
-              : 'translate-x-full opacity-0 pointer-events-none lg:hidden'
+              : 'translate-x-full opacity-0 pointer-events-none'
           }
-          lg:hidden
-      `}
+          /* Esta clase es vital para asegurar que el móvil NO aparezca en escritorio */
+          lg:hidden 
+        `}
       >
         {navItems.map((item) => (
           <Link

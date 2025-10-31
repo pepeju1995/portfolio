@@ -32,7 +32,7 @@ jest.mock('../ThemeSwitch', () => ({
 describe('Navigation', () => {
   it('renders logo/name', () => {
     render(<Navigation />);
-    expect(screen.getByText('Jose Juan Pérez González')).toBeInTheDocument();
+    expect(screen.getByText('JJPG')).toBeInTheDocument();
   });
 
   it('renders navigation links in desktop menu', () => {
